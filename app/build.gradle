@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    String URL_RELEASE = "\"https://pokeapi.co/api/v2/\""
+    String URL_DEBUG = "\"https://pokeapi.co/api/v2/\""
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.pokeapp"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", URL_DEBUG)
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", URL_RELEASE)
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation deps.kotlin
+    implementation deps.androidx
+    implementation deps.google
+    implementation deps.network
+    implementation deps.util
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt deps.compiler
+    testImplementation deps.unitTest
+    kaptTest deps.unitTestCompiler
+    androidTestImplementation deps.androidTest
+    kaptAndroidTest deps.androidTestCompiler
+    debugImplementation deps.debugTest
+}
+kapt{
+    correctErrorTypes true
+}

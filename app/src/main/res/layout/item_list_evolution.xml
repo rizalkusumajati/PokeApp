@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPhoto1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPokemonName1"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/black"
+        tools:text ="Pikachu"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ivPhoto1"
+        app:layout_constraintEnd_toEndOf="@id/ivPhoto1"
+        app:layout_constraintStart_toStartOf="@id/ivPhoto1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMinLevel"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/black"
+        tools:text ="Pikachu"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/ivPhoto1"
+        app:layout_constraintEnd_toStartOf="@id/ivPhoto2"
+        app:layout_constraintTop_toTopOf="@id/ivPhoto1"
+        app:layout_constraintBottom_toBottomOf="@id/ivPhoto1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/tvMinLevel"
+        app:layout_constraintStart_toEndOf="@id/ivPhoto1"
+        app:layout_constraintEnd_toStartOf="@id/ivPhoto2"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:background="@color/purple_700"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_2sdp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPhoto2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPokemonName2"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/black"
+        tools:text ="Pikachu"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ivPhoto2"
+        app:layout_constraintEnd_toEndOf="@id/ivPhoto2"
+        app:layout_constraintStart_toStartOf="@id/ivPhoto2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
